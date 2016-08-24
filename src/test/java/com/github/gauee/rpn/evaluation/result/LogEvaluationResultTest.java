@@ -1,17 +1,15 @@
 package com.github.gauee.rpn.evaluation.result;
 
-import org.assertj.core.api.Assertions;
+import org.apache.logging.slf4j.Log4jLoggerFactory;
+import org.apache.logging.slf4j.MockedLog4jLoggerFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.ArgumentMatcher;
 import org.mockito.Captor;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.impl.Log4jLoggerFactory;
-import org.slf4j.impl.MockedLog4jLoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
