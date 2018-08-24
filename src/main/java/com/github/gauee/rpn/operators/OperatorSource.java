@@ -10,6 +10,9 @@ public class OperatorSource {
     private static final Map<String, Operator> OPERATORS = ImmutableMap.<String, Operator>builder()
             .put("+", new AdditionalOperator())
             .put("-", new SubtractOperator())
+            .put("*", new MultiplicationOperator())
+            .put("/", new DivisionOperator())
+            .put("^", new ExponentiationOperator())
             .build();
 
     public Operator findOperator(String token) {
