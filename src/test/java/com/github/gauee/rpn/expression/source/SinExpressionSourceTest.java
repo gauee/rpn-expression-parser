@@ -1,7 +1,6 @@
 package com.github.gauee.rpn.expression.source;
 
 import org.apache.commons.lang3.StringUtils;
-import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,16 +11,16 @@ import java.io.IOException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
 
-public class StinExpressionSourceTest {
+public class SinExpressionSourceTest {
 
-    private StinExpressionSource expressionSource;
+    private SinExpressionSource expressionSource;
 
     @Rule
     public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
 
     @Before
     public void setUp() {
-        expressionSource = new StinExpressionSource();
+        expressionSource = new SinExpressionSource();
     }
 
     @Test
