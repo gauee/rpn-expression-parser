@@ -7,8 +7,8 @@ import com.github.gauee.rpn.operators.OperatorSource;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class RPNEvaluationService {
     private final static NumberFormat nf = new DecimalFormat("#.###");
@@ -17,19 +17,19 @@ public class RPNEvaluationService {
     public void evaluate(ExpressionSource expressionSource, EvaluationResult evaluationResult) {
         String expression = expressionSource.readExpression();
 
-        Queue<Double> operands = new LinkedList<>();
+        Deque<Double> operands = new LinkedList<>();
 
         for (String token : expression.split(" ")) {
             Operator operator = operatorSource.findOperator(token);
             if (operator != null) {
-                Double calculatedValue = operator.calculate(operands.poll(), operands.poll());
+                Double calculatedValue = operator.calculate(operands.pollLast(), operands.pollLast());
                 operands.add(calculatedValue);
             } else {
                 operands.add(Double.parseDouble(token));
             }
         }
 
-        String result = nf.format(operands.poll());
+        String result = nf.format(operands.pollLast());
         evaluationResult.print(result);
     }
 }
