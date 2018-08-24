@@ -39,6 +39,7 @@ public class RPNEvaluationServiceTest {
         return new Object[][]{
                 {"1 2 +", "3"},
                 {"1 2 + 10 +", "13"},
+                {"1 2 ) +", "3"},
                 {"1 2 -", "-1"},
                 {"30 2 - 10 -", "18"},
                 {"3 11 5 + -", "-13"},
