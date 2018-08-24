@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class StinExpressionSource implements ExpressionSource {
+public class SinExpressionSource implements ExpressionSource {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(StinExpressionSource.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SinExpressionSource.class);
 
     public String readExpression() {
         try (Reader reader = new BufferedReader(new InputStreamReader(System.in))) {
